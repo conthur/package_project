@@ -53,7 +53,7 @@ ggplot(MODIS_data, aes(x = daynight,
   iceberg_theme()
 ```
 
-# Demonstrate scale_color_gradient_iceberg.R
+# Demonstrate scale_color_gradient_iceberg
 
 Let's create a scatter plot which will use the custom scale_color_gradient() function. Because we have latitude and longitiude data, we can use this to create a rough map. 
 
@@ -63,9 +63,23 @@ ggplot(MODIS_data, aes(x = latitude,
                        color = brightness)) +
   geom_point() + 
   iceberg_theme() +
-  scale_color_gradient_iceberg() + labs(
-    title = "Heatmap of Brightness of Individual Fires", 
+  scale_color_gradient_iceberg() + 
+  labs(
+    title = "Heatmap of Brightness of Individual Thermal Anomlies in Kelvin", 
     x = "Latitude",
     y = "Longitiude"
   )
 ```
+
+# Demonstrate scale_fill_iceberg()
+
+Now let us create a plot which will detail a use case for the scale_fill_iceberg() function. This function can be added onto any plot which uses the fill argument in it's aesthetics. 
+
+```{r}
+ggplot(MODIS_data, aes(x = brightness, 
+                       y = frp, 
+                       fill = daynight)) +
+  geom_point() +
+  iceberg_theme()
+```
+

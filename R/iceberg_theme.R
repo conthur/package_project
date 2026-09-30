@@ -21,6 +21,8 @@ iceberg_theme = function() {
   font_add_google("Oswald", "Oswald")
   showtext_auto()
     
+  options(ggplot2.discrete.fill = iceberg_palette)
+  
   ggplot2::theme_minimal() +
     ggplot2::theme(
         
