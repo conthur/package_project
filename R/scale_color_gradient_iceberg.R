@@ -11,7 +11,7 @@ library(roxygen2)
 #' @export
 scale_color_gradient_iceberg = function() {
   ggplot2::scale_color_gradient(
-    low = get_col(navy_blue),
-    high = get_col(royal_blue)
+    low = get_col(sky_blue),
+    high = get_col(navy_blue)
   )
 }

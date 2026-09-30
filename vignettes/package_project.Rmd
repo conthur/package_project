@@ -9,7 +9,7 @@ vignette: >
 
 # Package Project Vinette
 
-```{r, include = FALSE}
+```{r, include = FALSE, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -26,38 +26,42 @@ In this Vignette, I will be explaining the two functions that make up the bulk o
 
 ## Dataset: MODIS Thermal Anomilies in Australia and New Zealand
 
-For the purpose of showcasing this package, I have chosen the data set named "MODIS_C6_Australia_and_New_Zealand_7d.csv". This dataset 
-contain information on thermnal anomiles (fires) detected by NASA's MODIS satellite that have occurred within a seven day period. 
+For the purpose of showcasing this package, I have chosen the data set named "MODIS_C6_Australia_and_New_Zealand_7d.csv". This dataset contain information on thermnal anomiles (fires) detected by NASA's MODIS satellite that have occurred within a seven day period. Documentation can be found at this [link](https://github.com/rfordatascience/tidytuesday/blob/main/data/2020/2020-01-07/readme.md)
 
 ```{r}
 MODIS_data = read_csv("MODIS_C6_Australia_and_New_Zealand_7d.csv")
 ```
 
-## ggplot_theme()
+## Demonstrate iceberg_theme()
 
-This theme is developed with the idea that it will be used for every single visualization I make in the future, it will include changes to the font and the colors in the graph in order to personalize and adapt it to my style. 
-
-First we load in the our package
+This theme was developed with the idea that it would replicate the color scheme and feel of an iceberg. This package will be used to develop other visualizations through the course of the semeseter.
 
 ```{r}
 library(package_project)
 ```
 
-Then we will make a graph using our MODIS_data dataframe. This graph will seek to find if their is a difference between the two 
+Then we will make a graph using our MODIS_data dataframe. This graph will seek to find if their is a difference between the distribution of thermal anomaly brightness by whether or not it was observed during the day or the night. 
 
 ```{r}
-MODIS_data_brightness = MODIS_data %>%
-  group_by(daynight) %>%
-  summarise(avg_brightness = median(brightness))
-
 # sample ggplot_graph for testing purposes
 ggplot(MODIS_data, aes(x = daynight, 
                           y = brightness)) +
   geom_boxplot() +
-  labs(title = "Average Thermal Anomily Brightness by Day and Night",
+  labs(title = "Distrbution of Thermal Anomily Brightness by Day and Night",
        x = "Day or Night", 
-       y = "Mean Brightness") +
+       y = "Brightness (Kelvin)") +
   iceberg_theme()
 ```
 
+# Demonstrate scale_color_gradient_iceberg.R
 
+Let's create a scatter plot which will use the custom scale_color_gradient() function. Because we have latitude and longitiude data, we can use this to create a rough map. 
+
+```{r}
+ggplot(MODIS_data, aes(x = latitude, 
+                       y = longitude, 
+                       color = brightness)) +
+  geom_point() + 
+  iceberg_theme() +
+  scale_color_gradient_iceberg()
+```

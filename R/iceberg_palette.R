@@ -12,5 +12,5 @@ iceberg_palette = c(
   sky_blue = "#87CEEB", 
   teal = "#008080",
   grey = "#808080", 
-  light_grey = "#F7F7F7"
+  light_grey = "#F2F2F2"
 )
