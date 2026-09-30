@@ -63,5 +63,9 @@ ggplot(MODIS_data, aes(x = latitude,
                        color = brightness)) +
   geom_point() + 
   iceberg_theme() +
-  scale_color_gradient_iceberg()
+  scale_color_gradient_iceberg() + labs(
+    title = "Heatmap of Brightness of Individual Fires", 
+    x = "Latitude",
+    y = "Longitiude"
+  )
 ```
