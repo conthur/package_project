@@ -4,7 +4,10 @@
 \alias{scale_fill_iceberg}
 \title{scale_fill_iceberg()}
 \usage{
-scale_fill_iceberg(colors = NULL, reverse = FALSE)
+scale_fill_iceberg(reverse = FALSE)
+}
+\arguments{
+\item{reverse}{swtiches}
 }
 \value{
 a ggplot object used to scale colors

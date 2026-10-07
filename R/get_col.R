@@ -3,7 +3,8 @@
 #'
 #' A helper function 
 #'
-#' @param the name of the color whose hash you want to return
+#' @param name  name of the color whose hash you want to return
+#' 
 #' @return a color's hash in the iceberg_palette
 #' 
 #' @examples

@@ -5,11 +5,12 @@ library(devtools)
 #'
 #' A helper function 
 #'
-#' @description
-#' A short description...
+#' @description 
+#' A function which takes a data frame and a numerical column name and returns the same data frame but with the proportion
 #' 
-#' @param df: a dataframe
-#' @param column_name: the name of the numerical column to  calculate the total sum from all rows and the proportion
+#' @param df the data frame to make edits to
+#' @param column_name the name of the numerical column to  calculate the total sum from all rows and the proportion
+#' 
 #' @return df: data frame with two new columns
 #' 
 #' @examples
@@ -39,7 +40,8 @@ full_count_proportion = function(df, column_name, round = FALSE) {
   # mutate with full count and proportions
   df = df %>%
     mutate(full_count = sum(column_name)) %>%
-    mutate(prop = column_name / full_count)
+    mutate(prop = column_name / full_count) %>%
+    select(-full_count)
 
   # if round is specified, round column to the nearest hundredth
   df$column_name = ifelse(round == TRUE, round(df$column_name, 2), df$column_name)

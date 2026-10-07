@@ -7,15 +7,15 @@
 full_count_proportion(df, column_name, round = FALSE)
 }
 \arguments{
-\item{df:}{a dataframe}
+\item{df}{the data frame to make edits to}
 
-\item{column_name:}{the name of the numerical column to  calculate the total sum from all rows and the proportion}
+\item{column_name}{the name of the numerical column to  calculate the total sum from all rows and the proportion}
 }
 \value{
 df: data frame with two new columns
 }
 \description{
-A short description...
+A function which takes a data frame and a numerical column name and returns the same data frame but with the proportion
 }
 \details{
 A helper function

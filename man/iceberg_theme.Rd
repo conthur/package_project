@@ -4,19 +4,29 @@
 \alias{iceberg_theme}
 \title{The Iceberg Theme}
 \usage{
-iceberg_theme()
+iceberg_theme(scale_fill_iceberg = FALSE)
+}
+\arguments{
+\item{scale_fill_iceberg:}{initialized as FALSE, if TRUE the scale_fill_iceberg() function will be called to complement your fill found in aes()}
 }
 \value{
 a ggplot theme object
 }
 \description{
-A theme developed in R which includes a color palette modeled after icebergs
+A theme developed in R which includes a color palette modeled after icebergs. This theme consists of all of the colors in the iceberg_palette, which includes:
+\itemize{
+\item navy blue
+\item sky blue
+\item teal
+\item light grey
+\item grey
+}
 }
 \examples{
 # library(iceburg_theme)
 
-ggplot(mtcars, aes(wt, mpg)) +
+ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) +
   geom_point() + 
-  iceburg_theme()
+  iceburg_theme(scale_fill_iceberg = TRUE)
 
 }

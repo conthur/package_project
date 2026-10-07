@@ -7,7 +7,7 @@
 get_col(name)
 }
 \arguments{
-\item{the}{name of the color whose hash you want to return}
+\item{name}{name of the color whose hash you want to return}
 }
 \value{
 a color's hash in the iceberg_palette
