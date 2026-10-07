@@ -2,13 +2,13 @@
 % Please edit documentation in R/scale_fiill_iceberg.R
 \name{scale_fill_iceberg}
 \alias{scale_fill_iceberg}
-\title{scale_fill_iceberg}
+\title{scale_fill_iceberg()}
 \usage{
-scale_fill_iceberg()
+scale_fill_iceberg(colors = NULL, reverse = FALSE)
 }
 \value{
 a ggplot object used to scale colors
 }
 \description{
-A palette developed to be used in the iceberg_package()
+A custom scale_fill_manual() which uses the iceberg_palette
 }

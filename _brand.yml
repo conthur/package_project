@@ -1,0 +1,23 @@
+meta:
+  name: "Iceburg Pacakge"
+
+logo:
+  images:
+    icon-color: "man/figures/iceburg_logo.png"  #iceburg_logo
+  small: icon-color
+
+color:
+  palette:
+    navy_blue: "#000080"
+    royal_blue: "#4169E1"
+    sky_blue: "#87CEEB" 
+    teal: "#008080"
+    grey: "#808080"
+  background: "#F2F2F2"
+  foreground: "#000080"
+
+typography:
+  fonts:
+    - family: Oswald
+      source: google
+  base: Oswald
