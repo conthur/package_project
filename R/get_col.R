@@ -14,6 +14,6 @@
 #' 
 #' @export
 get_col = function(name) {
-  name_str = deparse(substitute(name))
-  iceberg_palette[[name_str]]
+  name <- substitute(name)
+  iceberg_palette[[as.character(name)]]
 }

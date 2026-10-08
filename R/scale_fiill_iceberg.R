@@ -12,14 +12,28 @@ library(roxygen2)
 #' 
 #' @export
 scale_fill_iceberg <- function(reverse = FALSE) {
-  # colors
-  colors = iceberg_palette
   
-  # if reverse = TRUE
-  if(reverse) {
+  # define all colors from iceberg_palette
+  colors = c(
+    get_col(navy_blue),
+    get_col(royal_blue),
+    get_col(sky_blue),
+    get_col(teal),
+    get_col(grey),
+    get_col(light_grey)
+  )
+  
+  # reverse the order of colors if reverse is TRUE
+  if (reverse) {
     colors = rev(colors)
   }
   
-  # access scale_fill in ggplot
-  ggplot2::scale_fill_manual(values = iceberg_palette)
+  # define the scaling function
+  ggplot2::discrete_scale(
+    aesthetics = "fill",
+    scale_name = "iceberg",
+    palette = function(n) {
+      colors[seq_len(n)]
+    }
+  )
 }

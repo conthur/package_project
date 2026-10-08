@@ -53,17 +53,13 @@ iceberg_theme = function(scale_fill_iceberg = FALSE) {
                                   linewidth = 1),
         
       # legend border
-      legend.background = element_rect(color = get_col(navy), 
+      legend.background = element_rect(color = get_col(navy_blue), 
                                        fill = NA,
                                        linewdith = 1),
       # Panel
       panel.background = element_rect(fill = get_col(light_grey), color = NA)
       
-      
-    ) + 
-    if (scale_fill_iceberg) {
-      scale_fill_iceberg()
-    }
+    )
 }
 
 

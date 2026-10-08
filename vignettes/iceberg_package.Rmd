@@ -1,5 +1,5 @@
 ---
-title: "package_project"
+title: "iceburg_package"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{package_project}
@@ -37,7 +37,7 @@ MODIS_data = read_csv("MODIS_C6_Australia_and_New_Zealand_7d.csv")
 This theme was developed with the idea that it would replicate the color scheme and feel of an iceberg. This package will be used to develop other visualizations through the course of the semeseter.
 
 ```{r}
-library(package_project)
+library(iceburg_package)
 ```
 
 Then we will make a graph using our MODIS_data dataframe. This graph will seek to find if their is a difference between the distribution of thermal anomaly brightness by whether or not it was observed during the day or the night. 
@@ -73,13 +73,15 @@ ggplot(MODIS_data, aes(x = latitude,
 
 # Demonstrate scale_fill_iceberg()
 
-Now let us create a plot which will detail a use case for the scale_fill_iceberg() function. This function can be added onto any plot which uses the fill argument in it's aesthetics. 
+Now let us create a plot which will detail a use case for the scale_fill_iceberg() function. This function can be added onto any plot which uses the fill argument in it's aesthetics. For geom_point it might be necessary to include the arguement "shape = fill"
 
 ```{r}
 ggplot(MODIS_data, aes(x = brightness, 
                        y = frp, 
                        fill = daynight)) +
-  geom_point() +
-  iceberg_theme()
+  geom_point(shape = 21) +
+  iceberg_theme() +
+  scale_fill_iceberg() +
+  labs(title = )
 ```
 

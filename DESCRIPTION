@@ -1,5 +1,5 @@
-Package: iceburg package
-Title: What the Package Does (One Line, Title Case)
+Package: iceberg
+Title: Iceberg Theme Ggplot2 Package with Helper Function
 Version: 0.0.0.9000
 Authors@R: 
     person("Connor", "Thurston", , "conthur14@gmail.com", role = c("aut", "cre"))
