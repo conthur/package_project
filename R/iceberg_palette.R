@@ -1,9 +1,8 @@
 
 #' The Iceberg Palette
 #' 
-#' A palette developed to be used in the iceberg_package()
-#'
-#' @return a list of colors
+#' @description
+#' A palette developed to be used in the iceberg_package() and used in our theme package
 #' 
 #' @export
 iceberg_palette =

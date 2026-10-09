@@ -1,5 +1,5 @@
 ---
-title: "iceburg_package"
+title: "iceburg"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{package_project}
@@ -37,7 +37,7 @@ MODIS_data = read_csv("MODIS_C6_Australia_and_New_Zealand_7d.csv")
 This theme was developed with the idea that it would replicate the color scheme and feel of an iceberg. This package will be used to develop other visualizations through the course of the semeseter.
 
 ```{r}
-library(iceburg_package)
+library(iceberg)
 ```
 
 Then we will make a graph using our MODIS_data dataframe. This graph will seek to find if their is a difference between the distribution of thermal anomaly brightness by whether or not it was observed during the day or the night. 
@@ -82,6 +82,87 @@ ggplot(MODIS_data, aes(x = brightness,
   geom_point(shape = 21) +
   iceberg_theme() +
   scale_fill_iceberg() +
-  labs(title = )
+  labs(title = "Brightness by FFP")
 ```
+
+# Demonstrate full_count_proportion
+
+We can use this function to get the proportion of a number category in a data set.
+
+```{r}
+MODIS_data %>%
+  full_count_proportion(., column_name = longitude) %>%
+  select(longitude, latitude, prop)
+```
+
+# Five Data Moves
+
+Using our data we will go through the five data moves in order to fully understand an aspect of our dataset
+
+## Group
+
+We will group by the daynight logical and the satellite logicall. daynight indicates if the fire occured in the day or the night, and satellite indicates which of satellite
+
+```{r}
+MODIS_data_moves = MODIS_data %>%
+  group_by(daynight, satellite)
+```
+
+## Filter
+
+For this data move we will filter by version of the satellite which was
+
+```{r}
+MODIS_data_moves = MODIS_data_moves %>%
+  filter(version == "6.0NRT")
+```
+
+## Calculating
+
+For this section we will calculate the total brightness
+
+```{r}
+MODIS_data_moves = MODIS_data_moves %>%
+  mutate(total_brightness = sum(brightness))
+```
+
+## Summarizing
+
+Our group by from earlier will help us get the total count of each satellite's day and night observations
+
+```{r}
+MODIS_data_moves %>%
+  summarize(total = n())
+```
+
+## Hierarchy
+
+Each satellite has it's own version associate to it, with multiple versions, therefore we can group the data first by satellite, and then by 
+
+```{r}
+MODIS_data_moves %>%
+  group_by(satellite, version) %>%
+  select(satellite, version)
+```
+
+## Merging
+
+I tried to find a data frame that would map to this, I was unsuccessful... so I made my own! I also have to assign a identifier to every row in the original data set, but now we can merge. 
+
+```{r}
+n = nrow(MODIS_data)
+
+new_df = data.frame(
+  id = 1:n,
+  number = runif(n)
+)
+
+
+MODIS_data = MODIS_data %>%
+  mutate(id = 1:n)
+
+MODIS_data %>%
+  left_join(new_df, by = "id")
+```
+
 

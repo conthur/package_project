@@ -1,9 +1,9 @@
 meta:
-  name: "iceburg_package"
+  name: "iceberg_package"
 
 logo:
   images:
-    icon-color: "man/figures/iceburg_logo.png"  #iceburg_logo
+    icon-color: "man/figures/iceberg_logo.png"  #iceburg_logo
   small: icon-color
 
 color:
