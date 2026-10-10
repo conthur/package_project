@@ -10,6 +10,8 @@ full_count_proportion(df, column_name, round = FALSE)
 \item{df}{the data frame to make edits to}
 
 \item{column_name}{the name of the numerical column to  calculate the total sum from all rows and the proportion}
+
+\item{round}{logical statement, round if TRUE}
 }
 \value{
 df: data frame with two new columns
@@ -21,8 +23,7 @@ A function which takes a data frame and a numerical column name and returns the 
 A helper function
 }
 \examples{
-library(iceberg_package)
-
-df \%>\% full_count_proportion(., number, round = TRUE)
+dat <- data.frame(number = c(1, 2, 3, 4))
+dat \%>\% full_count_proportion(number, round = TRUE)
 
 }

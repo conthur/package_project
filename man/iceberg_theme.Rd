@@ -23,10 +23,6 @@ A theme developed in R which includes a color palette modeled after icebergs. Th
 }
 }
 \examples{
-# library(iceburg_theme)
-
-ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) +
-  geom_point() + 
-  iceburg_theme(scale_fill_iceberg = TRUE)
+ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) + geom_point() + iceburg_theme(scale_fill_iceberg = TRUE)
 
 }

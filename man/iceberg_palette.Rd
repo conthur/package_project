@@ -6,9 +6,6 @@
 \usage{
 iceberg_palette
 }
-\value{
-a list of colors
-}
 \description{
-A palette developed to be used in the iceberg_package()
+A palette developed to be used in the iceberg_package() and used in our theme package
 }

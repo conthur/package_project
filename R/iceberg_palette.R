@@ -1,4 +1,3 @@
-
 #' The Iceberg Palette
 #' 
 #' @description

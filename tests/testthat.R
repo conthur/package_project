@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(GgplotTheme)
+library(iceberg)
 
-test_check("GgplotTheme")
+test_check("iceberg")

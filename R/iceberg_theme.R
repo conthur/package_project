@@ -1,7 +1,3 @@
-library(devtools)
-library(roxygen2)
-library(showtext)
-
 #' The Iceberg Theme
 #'
 #' @description
@@ -17,18 +13,24 @@ library(showtext)
 #' @param scale_fill_iceberg: initialized as FALSE, if TRUE the scale_fill_iceberg() function will be called to complement your fill found in aes()
 #' 
 #' @examples
-#' # library(iceburg_theme)
-#' 
-#' ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) +
-#'   geom_point() + 
-#'   iceburg_theme(scale_fill_iceberg = TRUE)
+#' ggplot(mtcars, aes(x = wt, y = mpg, fill = mpg)) + geom_point() + iceburg_theme(scale_fill_iceberg = TRUE)
 #' 
 #' @export
 iceberg_theme = function(scale_fill_iceberg = FALSE) {
     
+  font <- "Oswald"
+  if (!font %in% sysfonts::font_families()) {
+    tryCatch(
+      sysfonts::font_add_google("Oswald", "Oswald"),
+      error = function(e) {
+        message("Could not download Oswald; using default font.")
+        font <<- "sans"
+      }
+    )
+  }
+  
   # change font to Oswald
-  font_add_google("Oswald", "Oswald")
-  showtext_auto()
+  showtext::showtext_auto()
     
   options(ggplot2.discrete.fill = iceberg_palette)
   

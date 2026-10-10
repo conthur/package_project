@@ -1,8 +1,5 @@
-library(testthat)
-library(tidyverse)
-
 test_that("full_count_proportion adds a prop column with correct values", {
-  df <- tibble(group = c("a", "b", "c", "d"), number = c(1, 2, 3, 4))
+  df <- data.frame(group = c("a", "b", "c", "d"), number = c(1, 2, 3, 4))
   
   result <- full_count_proportion(df, number)
   

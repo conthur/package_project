@@ -1,7 +1,3 @@
-library(ggplot2)
-library(devtools)
-library(roxygen2)
-
 #' scale_fill_iceberg()
 #'
 #' A custom scale_fill_manual() which uses the iceberg_palette

@@ -17,7 +17,10 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(tidyverse)
+library(iceberg)
+library(ggplot2)
+library(dplyr)
+library(readr)
 ```
 
 ## Introduction
@@ -34,13 +37,9 @@ MODIS_data = read_csv("MODIS_C6_Australia_and_New_Zealand_7d.csv")
 
 ## Demonstrate iceberg_theme()
 
-This theme was developed with the idea that it would replicate the color scheme and feel of an iceberg. This package will be used to develop other visualizations through the course of the semeseter.
+This theme was developed with the idea that it would replicate the color scheme and feel of an iceberg. This package will be used to develop other visualizations through the course of the semester.
 
-```{r}
-library(iceberg)
-```
-
-Then we will make a graph using our MODIS_data dataframe. This graph will seek to find if their is a difference between the distribution of thermal anomaly brightness by whether or not it was observed during the day or the night. 
+Then we will make a graph using our MODIS_data data frame. This graph will seek to find if their is a difference between the distribution of thermal anomaly brightness by whether or not it was observed during the day or the night. 
 
 ```{r}
 # sample ggplot_graph for testing purposes

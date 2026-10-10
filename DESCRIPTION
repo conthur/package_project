@@ -4,14 +4,21 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Connor", "Thurston", , "conthur14@gmail.com", role = c("aut", "cre"))
 Description: This package implements a theme similar to that of an iceburg for ggplot2 packages while also containing some helper functions.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Suggests: 
+Imports:
+    dplyr,
+    rlang,
+    ggplot2,
+    sysfonts,
+    showtext,
+    magrittr
+Suggests:
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    readr
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-Config/roxygen2/version: 8.1.0
+Config/roxygen2/version: 8.1.1

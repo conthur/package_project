@@ -16,8 +16,6 @@ a color's hash in the iceberg_palette
 A helper function
 }
 \examples{
-library(iceberg_package)
-
 get_col(light_grey)
 
 }

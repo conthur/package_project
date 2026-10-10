@@ -1,7 +1,3 @@
-library(ggplot2)
-library(devtools)
-library(roxygen2)
-
 #' scale color gradient iceberg
 #'
 #' A function used to make a custom scale_color_gradient() using iceberg_palette

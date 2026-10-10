@@ -1,4 +1,3 @@
-
 #' get_col()
 #'
 #' A helper function 
@@ -8,8 +7,6 @@
 #' @return a color's hash in the iceberg_palette
 #' 
 #' @examples
-#' library(iceberg_package)
-#' 
 #' get_col(light_grey)
 #' 
 #' @export
